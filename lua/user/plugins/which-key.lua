@@ -8,6 +8,7 @@ return {
     config = function()
         local wk = require("which-key")
         wk.register({
+            e = { "<cmd>NvimTreeOpen<cr>", "File Explorer" },
             f = { 
                 name = "Telescope",
                 f = { "<cmd>Telescope find_files<cr>", "Find files" }
