@@ -6,8 +6,8 @@ keymap("v", "nn", "<Esc>", { desc = "Escape to normal mode (from visual mode)", 
 keymap("n", "*", "i", { desc = "Enter insert mode", silent = true })
 
 -- Movement
-keymap({ "n", "v" }, "0", "^", { desc = "Jump to the first character of the line" })
-keymap({ "n", "v" }, "-", "<End>", { desc = "Jump to the last character of the line" })
+keymap({ "n", "v" }, "0", "^", { desc = "Jump to the first non-blank character of the line" })
+keymap({ "n", "v" }, "-", "g_", { desc = "Jump to the last non-blank character of the line" })
 
 keymap({ "n", "v" }, "i", "gk", { desc = "Move up", silent = true })
 keymap({ "n", "v" }, "j", "h", { desc = "Move down", silent = true })
