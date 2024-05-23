@@ -1,35 +1,35 @@
 local servers = {
-	"lua_ls",
-	"pyright",
+    lua_ls = {},
+    pyright = {},
+    kotlin_language_server = { cmd = { "kotlin-language-server" } },
 }
 
 return {
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = servers,
-			})
-		end,
-	},
-	{
-		"neovim/nvim-lspconfig",
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = vim.tbl_keys(servers),
+            })
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
         lazy = false,
-		config = function()
-			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        config = function()
+            local lspconfig = require("lspconfig")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			for _, lsp in ipairs(servers) do
-				lspconfig[lsp].setup({
-					capabilities = capabilities,
-				})
-			end
-		end,
-	},
+            for lsp, config in pairs(servers) do
+                config.capabilities = capabilities
+                lspconfig[lsp].setup(config)
+            end
+        end,
+    },
 }
