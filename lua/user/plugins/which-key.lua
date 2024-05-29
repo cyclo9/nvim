@@ -18,6 +18,7 @@ return {
 			e = { "<cmd>NvimTreeOpen<cr>", "File Explorer" },
 			f = {
 				name = "Telescope",
+				b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 				f = { "<cmd>Telescope find_files<cr>", "Find files" },
 				g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 			},
