@@ -27,13 +27,14 @@ keymap("n", "<leader>s", vim.lsp.buf.rename, { desc = "Rename Symbol", silent = 
 -- Code
 keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions", silent = true })
 keymap("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover", silent = true })
+keymap("n", "<leader>o", "<cmd>Outline<cr>", { desc = "View Outline", silent = true })
 
 -- Buffers and Files
-keymap("n", "<leader>bd", ":bd<cr>", { desc = "Close Buffer", silent = true })
-keymap("n", "<leader>bf", ":BufferLinePick<cr>", { desc = "Pick Buffer", silent = true })
-keymap("n", "<leader>e", ":NvimTreeOpen<cr>", { desc = "File Explorer", silent = true })
-keymap("n", "<leader>ff", ":Telescope find_files<cr>", { desc = "Find Files", silent = true })
-keymap("n", "<leader>fg", ":Telescope live_grep<cr>", { desc = "Live Grep", silent = true })
+keymap("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Close Buffer", silent = true })
+keymap("n", "<leader>bf", "<cmd>BufferLinePick<cr>", { desc = "Pick Buffer", silent = true })
+keymap("n", "<leader>e", "<cmd>NvimTreeOpen<cr>", { desc = "File Explorer", silent = true })
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files", silent = true })
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep", silent = true })
 
 -- Goto
 keymap("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition", silent = true })
