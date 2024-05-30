@@ -32,7 +32,10 @@ keymap("n", "<leader>o", "<cmd>Outline<cr>", { desc = "View Outline", silent = t
 -- Buffers and Files
 keymap("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Close Buffer", silent = true })
 keymap("n", "<leader>bf", "<cmd>BufferLinePick<cr>", { desc = "Pick Buffer", silent = true })
-keymap("n", "<leader>e", "<cmd>NvimTreeOpen<cr>", { desc = "File Explorer", silent = true })
+
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer", silent = true })
+keymap("n", "<C-n>", "<cmd>NvimTreeFocus<cr>", { desc = "File Explorer", silent = true })
+
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files", silent = true })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep", silent = true })
 
