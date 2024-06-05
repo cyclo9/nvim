@@ -2,7 +2,13 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         config = function()
-            require("telescope").setup()
+            require("telescope").setup {
+                defaults = {
+                    vimgrep_arguments = {
+                        '--hidden'
+                    }
+                }
+            }
         end
     },
     {
@@ -20,3 +26,4 @@ return {
         end
     }
 }
+
