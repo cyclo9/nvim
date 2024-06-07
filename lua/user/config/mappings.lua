@@ -41,3 +41,4 @@ keymap("n", "<leader>fb", "<cmd>BufferLinePick<cr>", { desc = "Pick Buffer", sil
 
 -- Goto
 keymap("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto Definition", silent = true })
+keymap("n", "<leader>gr", vim.lsp.buf.references, { desc = "See references", silent = true })
