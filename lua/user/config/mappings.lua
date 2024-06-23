@@ -28,6 +28,7 @@ keymap("n", "<leader>s", vim.lsp.buf.rename, { desc = "Rename Symbol", silent = 
 keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions", silent = true })
 keymap("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover", silent = true })
 keymap("n", "<leader>o", "<cmd>Outline<cr>", { desc = "View Outline", silent = true })
+keymap("n", "<leader>\\", "<cmd>noh<cr>", { desc = "Clear Highlighting", silent = true })
 
 -- Buffers and Files
 keymap("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Close Buffer", silent = true })
