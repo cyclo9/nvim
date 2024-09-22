@@ -31,6 +31,7 @@ keymap("n", "<leader>o", "<cmd>Outline<cr>", { desc = "View Outline", silent = t
 keymap("n", "<leader>\\", "<cmd>noh<cr>", { desc = "Clear Highlighting", silent = true })
 
 -- Buffers and Files
+keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Write Buffer", silent = true })
 keymap("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Close Buffer", silent = true })
 
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer", silent = true })
