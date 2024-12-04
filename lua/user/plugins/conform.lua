@@ -4,7 +4,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "black" },
+				python = { "blue" },
 				javascript = { "prettier" },
 			},
 			format_on_save = {
@@ -21,4 +21,3 @@ return {
 		})
 	end,
 }
-
