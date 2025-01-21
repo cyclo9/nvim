@@ -1,12 +1,20 @@
 return {
-	"navarasu/onedark.nvim",
-	lazy = false, -- make sure we load this during startup if it is your main colorscheme
-	priority = 1000, -- make sure to load this before all the other start plugins
+	"uloco/bluloco.nvim",
+	lazy = false,
+	priority = 1000,
+	dependencies = { "rktjmp/lush.nvim" },
 	config = function()
-		-- load the colorscheme here
-		vim.cmd([[colorscheme onedark]])
-		require("onedark").setup({
-			style = "darker",
-		})
+		vim.cmd([[colorscheme bluloco]])
 	end,
+
+	-- "navarasu/onedark.nvim",
+	-- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- priority = 1000, -- make sure to load this before all the other start plugins
+	-- config = function()
+	-- 	-- load the colorscheme here
+	-- 	vim.cmd([[colorscheme onedark]])
+	-- 	require("onedark").setup({
+	-- 		style = "darker",
+	-- 	})
+	-- end,
 }
