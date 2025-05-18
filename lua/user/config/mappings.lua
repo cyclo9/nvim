@@ -4,14 +4,15 @@ local keymap = vim.keymap.set
 keymap("i", "jj", "<Esc>", { desc = "Escape to normal mode (from insert mode)", silent = true })
 keymap("v", "nn", "<Esc>", { desc = "Escape to normal mode (from visual mode)", silent = true })
 keymap("n", "*", "i", { desc = "Enter insert mode", silent = true })
+keymap("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit nvim", silent = true })
 
--- Movement
+-- Navigation
 keymap({ "n", "v" }, "0", "^", { desc = "Jump to the first non-blank character of the line" })
 keymap({ "n", "v" }, "-", "g_", { desc = "Jump to the last non-blank character of the line" })
 
 keymap({ "n", "v" }, "i", "gk", { desc = "Move up", silent = true })
-keymap({ "n", "v" }, "j", "h", { desc = "Move down", silent = true })
-keymap({ "n", "v" }, "k", "gj", { desc = "Move left", silent = true })
+keymap({ "n", "v" }, "j", "h", { desc = "Move left", silent = true })
+keymap({ "n", "v" }, "k", "gj", { desc = "Move down", silent = true })
 keymap({ "n", "v" }, "l", "l", { desc = "Move right", silent = true })
 
 -- Panes
@@ -29,6 +30,28 @@ keymap("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions", sile
 keymap("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover", silent = true })
 keymap("n", "<leader>o", "<cmd>Outline<cr>", { desc = "View Outline", silent = true })
 keymap("n", "<leader>\\", "<cmd>noh<cr>", { desc = "Clear Highlighting", silent = true })
+
+keymap("n", "<leader>rc", function()
+	vim.cmd("JupyterConnect")
+end, { desc = "Connect to qtconsole", silent = true })
+
+keymap("n", "<leader>cc", function()
+	vim.cmd("JupyterSendCell")
+end, { desc = "Send Cell", silent = true })
+
+keymap("x", "<leader>cc", function()
+	vim.cmd("JupyterSendRange")
+end, { desc = "Send Selection", silent = true })
+
+keymap("n", "<leader>cf", function()
+	vim.cmd("JupyterRunFile")
+end, { desc = "Run file", silent = true })
+
+keymap("n", "<leader>mm", function()
+	vim.api.nvim_put({ "" }, "l", true, true)
+	vim.api.nvim_put({ "# %%" }, "l", true, true)
+	vim.cmd("normal! o")
+end, { desc = "Insert cell marker and move down" })
 
 -- Buffers and Files
 keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Write Buffer", silent = true })
