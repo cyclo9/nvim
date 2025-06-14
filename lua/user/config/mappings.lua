@@ -48,8 +48,7 @@ keymap("n", "<leader>cf", function()
 end, { desc = "Run file", silent = true })
 
 keymap("n", "<leader>mm", function()
-	vim.api.nvim_put({ "" }, "l", true, true)
-	vim.api.nvim_put({ "# %%" }, "l", true, true)
+	vim.api.nvim_put({ "# %%" }, "l", true, false)
 	vim.cmd("normal! o")
 end, { desc = "Insert cell marker and move down" })
 
