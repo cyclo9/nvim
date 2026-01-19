@@ -15,6 +15,8 @@ return {
             function() vim.api.nvim_feedkeys("g_", "n", false) end,
             desc = "Jump to the last non-blank character of the line",
           },
+          ["<leader>o"] = false,
+          ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "Open outline" },
           -- Editing
           ["U"] = { "<C-r>", desc = "Redo" },
           ["<leader>s"] = { function() vim.lsp.buf.rename() end, desc = "Rename symbol" },
